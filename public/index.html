@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeathStar LiveView</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+
+  <!-- HUD — top-right sci-fi terminal readout -->
+  <div id="hud">
+    <div class="hud-title">System Status</div>
+    <div class="hud-row">
+      <span class="hud-label">CPU</span>
+      <span id="hud-cpu" class="hud-val green">--%</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-label">RAM</span>
+      <span id="hud-ram" class="hud-val green">--/-- GB</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-label">Agents</span>
+      <span id="hud-agents" class="hud-val green">0/0</span>
+    </div>
+  </div>
+
+  <!-- Chat panel — slides in from right on agent click -->
+  <div id="chat-panel">
+    <div class="panel-header">
+      <h3 id="chat-agent-name">Agent</h3>
+      <span id="chat-state-badge" class="state-badge">idle</span>
+      <button id="chat-close" class="close-btn">✕</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Send a message…" autocomplete="off">
+      <button id="chat-send">SEND</button>
+    </div>
+  </div>
+
+  <script type="module" src="canvas.js"></script>
+</body>
+</html>
